@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+
+<body>
+    <section>
+        <h2>Adiciona novo Projeto:</h2>
+
+        <div class="error" th:text="${error}"></div>
+
+        <form action="#" th:action="@{/projetos/new}" th:object="${projeto}" method="post">
+            <div class="grid">
+                <label for="titulo">
+                    Titulo:
+                    <input name="titulo" th:field="*{titulo}" /><br />
+                </label>
+                <label for="temas">
+                    Tema:
+                    <select th:field="*{tema}">
+                        <option th:each="tema : ${temas}" th:value="${tema.id}" th:text="${tema.nome}"></option>
+                    </select>
+                </label>
+            </div>
+            <div class="grid">
+                <label for="delegados">
+                    Delegado:
+                    <select th:field="*{delegado}">
+                        <option th:each="delegado : ${delegados}" th:value="${delegado.id}" th:text="${delegado.nome}"></option>
+                    </select>
+                </label>
+                <label for="validade">
+                    Validade:
+                    <input name="validade" type="datetime-local" th:field="*{validade}"/>
+                </label>
+            </div>
+            <label for="descricao">
+                Descrição:
+                <textarea th:field="*{descricao}" required>
+
+                </textarea>
+            </label>
+            <input type="submit" value="Adicionar" />
+        </form>
+    </section>
+</body>
+
+</html>

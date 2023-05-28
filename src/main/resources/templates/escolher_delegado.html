@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+
+<body>
+<section>
+  <h2>Escolher Delegado:</h2>
+
+  <div class="error" th:text="${error}"></div>
+
+  <form action="#" th:action="@{/escolher-delegado}" method="post">
+
+    <label for="cidadaos">Cidadao que vai escolher:</label>
+    <select th:name="c_escolhido">
+      <option th:each="c : ${cidadaos}" th:value="${c.id}" th:text="${c.nome}"></option>
+    </select>
+
+    <label for="temas">Escolha um tema: </label>
+    <select th:name="t_escolhido">
+      <option th:each="t : ${temas}" th:value="${t.id}" th:text="${t.nome}"></option>
+    </select>
+
+    <label for="delegados">Escolha um delegado:</label>
+    <select th:name="del_escolhido">
+      <option th:each="d : ${delegados}" th:value="${d.id}" th:text="${d.nome}"></option>
+    </select>
+
+    <input type="submit" value="Escolher" />
+  </form>
+</section>
+</body>
+
+</html>

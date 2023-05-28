@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+
+<body>
+<section>
+    <h2>Votar em Proposta:</h2>
+
+    <div style="text-align: center;
+                background-color: limegreen;
+                color: white;
+                padding: 10px"
+         role="alert" th:text="${success}" th:if="${success}"></div>
+    <div style="text-align: center;
+                background-color: indianred;
+                color: white;
+                padding: 10px;
+                white-space: pre"
+
+         role="alert"
+         th:text="${error}"
+         th:if="${error}"></div>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Proposta:</th>
+                <td th:text="${proposta.titulo}">...</td>
+            </tr>
+            <tr>
+                <th>Tema:</th>
+                <td th:text="${proposta.tema.nome}">...</td>
+            </tr>
+            <tr>
+                <th>Cidadao:</th>
+                <td th:text="${cidadao.nome}">...</td>
+            </tr>
+            <tr>
+                <th>Voto por omissão (Delegado para o Tema):</th>
+                <td th:text="${voto_delegado.toString()}">...</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <form action="#" th:action="@{/votar-proposta/cidadao/{c_id}/proposta/{p_id}(c_id=${cidadao.id}, p_id=${proposta.id})}" method="post">
+
+        <label for="voto">Escolha o Voto:</label>
+        <select th:name="voto">
+            <option th:each="v : ${votos}" th:value="${v}" th:text="${v.toString()}"></option>
+        </select>
+        <div th:switch="${cidadao.getProjVotados().contains(proposta)}">
+            <input th:case="false" type="submit" value="VOTAR" />
+            <input th:case="true" type="submit" value="Proposta votada" disabled/>
+        </div>
+
+
+    </form>
+
+
+</section>
+</body>
+
+</html>

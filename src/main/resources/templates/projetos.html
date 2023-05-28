@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+
+<body>
+<section>
+  <h2>Projetos de Lei não expirados:</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Apoios</th>
+      <th>Tema</th>
+      <th>Validade</th>
+      <!--<th>Tema</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${projetos.empty}">
+      <td colspan="3">Sem Projetos válidos</td>
+    </tr>
+    <tr th:each="p : ${projetos}">
+      <td><a th:href="@{/projetos/} + ${p.id}" th:text="${p.titulo}">...</a></td>
+      <td th:text="${p.apoios}">...</td>
+      <td th:text="${p.tema.getNome()}">...</td>
+      <td th:text="${#temporals.format(p.validade, 'dd-MM-yyyy HH:mm')}">...</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+</body>
+
+</html>

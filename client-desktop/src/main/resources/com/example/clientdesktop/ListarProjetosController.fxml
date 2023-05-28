@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@VotacoesEmCurso.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientdesktop.controllers.ListarProjetosController">
+    <top>
+        <HBox prefHeight="58.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="bttn_inicio" mnemonicParsing="false" onAction="#mudaParaInicio" text="Inicio" textAlignment="CENTER" translateX="10.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/home-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="bttnVotacoes" mnemonicParsing="false" onAction="#mudaParaVotacoesEmCurso" prefHeight="40.0" prefWidth="194.0" text="Votações em curso" textAlignment="CENTER" translateX="20.0" translateY="10.0">
+                <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/votacoes-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="bttnProjetos" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" text="Lista de Projetos" textAlignment="CENTER" translateX="30.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/votacoes-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane prefHeight="280.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Separator prefHeight="1.0" prefWidth="800.0" style="-fx-background-color: blue;" />
+            <Label layoutX="22.0" layoutY="14.0" prefHeight="30.0" prefWidth="179.0" text="Lista de Projetos" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="projetos" layoutX="11.0" layoutY="54.0" prefHeight="370.0" prefWidth="780.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="54.0">
+              <columns>
+                <TableColumn fx:id="titulo" prefWidth="95.20001220703125" style="-fx-alignment: CENTER;" text="Titulo" />
+                  <TableColumn fx:id="validade" prefWidth="182.00000762939453" style="-fx-alignment: CENTER;" text="Validade" />
+                  <TableColumn fx:id="proponente" prefWidth="152.39996337890625" style="-fx-alignment: CENTER;" text="Proponente" />
+                  <TableColumn fx:id="tema" minWidth="9.5999755859375" prefWidth="178.99996948242188" style="-fx-alignment: CENTER;" text="Tema" />
+                  <TableColumn fx:id="detalhes" prefWidth="188.800048828125" style="-fx-alignment: CENTER;" text="Detalhes" />
+              </columns>
+            </TableView>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="10.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+    </bottom>
+</BorderPane>

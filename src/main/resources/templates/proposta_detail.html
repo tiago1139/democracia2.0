@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+
+<body>
+<section>
+  <h2>Proposta:</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="text-align: center;">Titulo</th>
+      <th style="text-align: center;">Proponente</th>
+      <th style="text-align: center;">Tema</th>
+      <th style="text-align: center;">Votos Favoráveis</th>
+      <th style="text-align: center;">Votos Desfavoráveis</th>
+      <th style="text-align: center;">Validade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="text-align: center;" th:text="${proposta.titulo}">...</td>
+      <td style="text-align: center;" th:text="${proposta.proponente.nome}">...</td>
+      <td style="text-align: center;" th:text="${proposta.tema.nome}">...</td>
+      <td style="text-align: center;" th:text="${proposta.votosFavoraveis}">...</td>
+      <td style="text-align: center;" th:text="${proposta.votosDesfavoraveis}">...</td>
+      <td style="text-align: center;" th:text="${#temporals.format(proposta.validade, 'dd-MM-yyyy HH:mm')}">...</td>
+    </tr>
+    <tr>
+      <th>Descrição:</th>
+    </tr>
+    <tr>
+      <td th:text="${proposta.descricao}">...</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <form action="#" th:action="@{/votacoes/} + ${proposta.id}"  method="post">
+
+    <label for="cidadaos">Escolha um cidadão para votar:</label>
+    <select th:name="c_escolhido">
+      <option th:each="c : ${cidadaos}" th:value="${c.id}" th:text="${c.nome}"></option>
+    </select>
+
+    <input type="submit" value="Ir para votar proposta" />
+
+  </form>
+
+
+</section>
+</body>
+
+</html>

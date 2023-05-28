@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@VotacoesEmCurso.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientdesktop.controllers.MainController">
+   <top>
+      <HBox prefHeight="58.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="bttn_inicio" mnemonicParsing="false" text="Inicio" textAlignment="CENTER" translateX="10.0" translateY="10.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/home-outline.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="bttnVotacoes" mnemonicParsing="false" onAction="#mudaParaVotacoesEmCurso" prefHeight="40.0" prefWidth="194.0" text="Votações em curso" textAlignment="CENTER" translateX="20.0" translateY="10.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/votacoes-outline.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="bttnProjetos" mnemonicParsing="false" onAction="#mudaParaProjetosNaoExpirados" prefHeight="40.0" prefWidth="194.0" text="Lista de Projetos" textAlignment="CENTER" translateX="30.0" translateY="10.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/votacoes-outline.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="280.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="272.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Democracia 2.0" textAlignment="CENTER" wrappingWidth="254.93670654296875">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="1.0" prefWidth="800.0" style="-fx-background-color: blue;" />
+            <Text fill="WHITE" layoutX="286.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aplicação Desktop&#10;Spring + JavaFX" textAlignment="CENTER" wrappingWidth="226.8189697265625">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="116.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#00ff26" layoutX="368.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipa" textAlignment="CENTER" wrappingWidth="63.5931396484375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="1.0" prefWidth="800.0" style="-fx-background-color: blue;" />
+            <Text fill="WHITE" layoutX="70.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiago Pinto 55172" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="340.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ricardo Soares 54446" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="583.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miguel Reis 54409" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

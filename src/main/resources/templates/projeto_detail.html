@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+
+<body th:object="${projeto}">
+    <section>
+        <h2>Projeto:</h2>
+
+        <table>
+            <tr>
+                <th>Titulo:</th>
+                <td th:text="${projeto.titulo}"></td>
+            </tr>
+            <tr>
+                <th>Descricao:</th>
+                <td th:text="${projeto.descricao}"></td>
+            </tr>
+            <tr>
+                <th>Tema:</th>
+                <td th:text="${tema}"></td>
+            </tr>
+            <tr>
+                <th>Delegado Responsável:</th>
+                <td th:text="${delegado}"></td>
+            </tr>
+            <tr>
+                <th>Número de apoios:</th>
+                <td th:text="${projeto.apoios}"></td>
+            </tr>
+            <tr>
+                <th>Validade:</th>
+                <td th:text="${projeto.validade}"></td>
+            </tr>
+        </table>
+
+
+
+        <form th:action="@{/projetos/{id}/apoiar(id=${projeto.id})}" method="post">
+            <!--<input type="hidden" name="projetoId" th:value="${projeto.id}" />-->
+            <label for="cidadaos">Escolha um cidadão para apoiar:</label>
+            <select th:name="c_apoia">
+                <option th:each="c : ${cidadaos}" th:value="${c.id}" th:text="${c.nome}"></option>
+            </select>
+            <button type="submit">Apoiar</button>
+        </form>
+
+    </section>
+</body>
+
+</html>

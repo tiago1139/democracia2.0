@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+
+<body>
+
+    <section>
+        <h2>Votacoes em curso:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Titulo</th>
+                    <th style="text-align: center;">Proponente</th>
+                    <th style="text-align: center;">Tema</th>
+                    <th style="text-align: center;">Votos Favoráveis</th>
+                    <th style="text-align: center;">Votos Desfavoráveis</th>
+                    <th style="text-align: center;">Validade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${votacoes.empty}">
+                    <td colspan="3">Sem Votações em Curso</td>
+                </tr>
+                <tr th:each="v : ${votacoes}">
+                    <td style="text-align: center;"><a th:href="@{/votacoes/} + ${v.id}" th:text="${v.titulo}">...</a></td>
+                    <td style="text-align: center;" th:text="${v.proponente.nome}">...</td>
+                    <td style="text-align: center;" th:text="${v.tema.nome}">...</td>
+                    <td style="text-align: center;" th:text="${v.votosFavoraveis}">...</td>
+                    <td style="text-align: center;" th:text="${v.votosDesfavoraveis}">...</td>
+                    <td style="text-align: center;" th:text="${#temporals.format(v.validade, 'dd-MM-yyyy HH:mm')}">...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

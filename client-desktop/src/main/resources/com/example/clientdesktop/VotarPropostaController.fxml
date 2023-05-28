@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@VotacoesEmCurso.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientdesktop.controllers.VotarPropostaController">
+    <top>
+        <HBox prefHeight="58.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="bttn_inicio" mnemonicParsing="false" onAction="#mudaParaInicio" text="Inicio" textAlignment="CENTER" translateX="10.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/home-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="bttnVotacoes" mnemonicParsing="false" onAction="#mudaParaVotacoesEmCurso" prefHeight="40.0" prefWidth="194.0" text="Votações em curso" textAlignment="CENTER" translateX="20.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/votacoes-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="bttnProjetos" mnemonicParsing="false" onAction="#mudaParaProjetosNaoExpirados" prefHeight="40.0" prefWidth="194.0" text="Lista de Projetos" textAlignment="CENTER" translateX="30.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/votacoes-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane prefHeight="421.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <Separator prefHeight="1.0" prefWidth="800.0" style="-fx-background-color: blue;" />
+                <Label layoutX="22.0" layoutY="14.0" prefHeight="30.0" prefWidth="198.0" text="Detalhes da Proposta" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            <GridPane layoutY="69.0" prefHeight="216.0" prefWidth="800.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="42.0" prefWidth="258.0" text="Titulo" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label fx:id="titulo" alignment="CENTER" prefHeight="18.0" prefWidth="400.0" text="Label" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="proponente" alignment="CENTER" prefHeight="18.0" prefWidth="402.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="tema" alignment="CENTER" prefHeight="18.0" prefWidth="401.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="validade" alignment="CENTER" prefHeight="18.0" prefWidth="476.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="favoraveis" alignment="CENTER" prefHeight="18.0" prefWidth="413.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="desfavoraveis" alignment="CENTER" prefHeight="18.0" prefWidth="398.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="289.0" text="Descrição" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="42.0" prefWidth="306.0" text="Proponente" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="245.0" text="Tema" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="274.0" text="Validade" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="345.0" text="Votos Favoráveis" textFill="WHITE" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="374.0" text="Votos Desfavoráveis" textFill="WHITE" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="descricao" alignment="CENTER" layoutX="410.0" layoutY="18.0" prefHeight="18.0" prefWidth="400.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="454.0" text="Voto Delegado por omissão" textFill="WHITE" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="omissao" alignment="CENTER" prefHeight="18.0" prefWidth="398.0" text="SEMVOTO" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <ButtonBar layoutX="301.0" layoutY="376.0" prefHeight="40.0" prefWidth="161.0">
+               <buttons>
+                  <ComboBox fx:id="votos" prefWidth="150.0" />
+               </buttons></ButtonBar>
+            <Label layoutX="80.0" layoutY="344.0" text="Cidadão que quer votar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+          <Button fx:id="botaoVotar" layoutX="547.0" layoutY="359.0" mnemonicParsing="false" onAction="#vota" prefHeight="37.0" prefWidth="204.0" text="Votar">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <ComboBox fx:id="cidadaosLista" layoutX="313.0" layoutY="344.0" onAction="#verificaVotacao" prefWidth="150.0" />
+            <Label layoutX="224.0" layoutY="384.0" prefHeight="26.0" prefWidth="64.0" text="Voto :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="10.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+    </bottom>
+
+</BorderPane>

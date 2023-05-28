@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@VotacoesEmCurso.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientdesktop.controllers.VotacoesEmCursoController">
+    <top>
+        <HBox prefHeight="58.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="bttn_inicio" mnemonicParsing="false" onAction="#mudaParaInicio" text="Inicio" textAlignment="CENTER" translateX="10.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/home-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="bttnVotacoes" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" text="Votações em curso" textAlignment="CENTER" translateX="20.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/votacoes-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="bttnProjetos" mnemonicParsing="false" onAction="#mudaParaProjetosNaoExpirados" prefHeight="40.0" prefWidth="194.0" text="Lista de Projetos" textAlignment="CENTER" translateX="30.0" translateY="10.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/votacoes-outline.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane prefHeight="280.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Separator prefHeight="1.0" prefWidth="800.0" style="-fx-background-color: blue;" />
+            <Label layoutX="22.0" layoutY="14.0" prefHeight="30.0" prefWidth="179.0" text="Votações em curso" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="votacoes" layoutX="9.0" layoutY="55.0" onMouseClicked="#propostaDetails" prefHeight="375.0" prefWidth="780.0" stylesheets="@VotacoesEmCurso.css" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="55.0">
+              <columns>
+                <TableColumn fx:id="titulo" prefWidth="95.20001220703125" style="-fx-alignment: CENTER;" text="Titulo" />
+                  <TableColumn fx:id="validade" prefWidth="156.0" style="-fx-alignment: CENTER;" text="Validade" />
+                  <TableColumn fx:id="proponente" prefWidth="144.79998779296875" style="-fx-alignment: CENTER;" text="Proponente" />
+                  <TableColumn fx:id="tema" minWidth="9.5999755859375" prefWidth="136.00006103515625" style="-fx-alignment: CENTER;" text="Tema" />
+                  <TableColumn fx:id="favoraveis" prefWidth="116.800048828125" style="-fx-alignment: CENTER;" text="Favoráveis" />
+                  <TableColumn fx:id="desfavoraveis" prefWidth="118.4000244140625" style="-fx-alignment: CENTER;" text="Desfavoráveis" />
+              </columns>
+            </TableView>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="10.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+    </bottom>
+</BorderPane>
