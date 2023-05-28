@@ -1,13 +1,6 @@
-# Equipa
-
-* Tiago Pinto 55172
-* Ricardo Soares 54446
-* Miguel Reis 54409
-
-# Notas
-O pre-commit não foi utilizado. <br>
-Por lapso, o Ricardo Soares utilizou duas contas ao realizar commits (fc54446 (fc54446@alunos.fc.ul.pt) e ricardo ( ricardomcs2001@gmail.com)), e o Miguel Reis utilizou três contas (heymimal (mimalreis@gmail.com), fc54409 (fc54409@alunos.ciencias.ulisboa.pt), Miguel Reis (fc54409@alunos.fc.ul.pt)).<br>
-O programa foi testado utilizando Java17 como ambiente de execução (na máquina virtual fornecida pelo DI).
+# Projeto da cadeira de "Construção de Sistemas de Software"
+Aplicação Web "server side rendered" + API REST , tudo feito em Java usando a framework Spring (Boot)
+Aplicação Cliente para Desktop usando a ferramenta JavaFX.
 
 
 # Projecto Democracia 2.0
@@ -26,7 +19,6 @@ De forma a manter a hipótese de delegar votos, é possível uma pessoa voluntar
 No entanto passa a existir a possibilidade de qualquer cidadão delegar os seus votos a um delegado, seja na<br>
 totalidade, ou por tema (saúde, educação, obras públicas, imigração, etc...).
 
-## Fase 1
 ### Casos de Uso
  * **Listar as votações em curso.** Este caso de uso permite obter uma listagem das propostas de lei
     em votação neste momento.
@@ -62,39 +54,15 @@ contrário é fechada como rejeitada.
 
 ## Testes
 
-Para correr os testes desenvolvidos pela equipa, executar o script **test.sh** na raiz do projeto.
+Para correr os testes , executar o script **test.sh** na raiz do projeto.
 
 
 ## Dependências
 
 Este projecto vai usar Java17+ e Postgres, mas esses vão estar disponíveis dentro dos containers Docker. Só são necessários se quiser correr a aplicação nativamente.
 
-### Windows
-
-Instalar [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) e [Python 3](https://www.python.org/ftp/python/3.11.2/python-3.11.2-amd64.exe)
-
-### Ubuntu
-
-```
-sudo apt-get python3 python3-pip
-```
-
-Seguir [esta página](https://docs.docker.com/engine/install/ubuntu/) e os quatro passos listados [aqui](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
-
-### Fedora
-
-```
-sudo dnf python3 python3-pip
-```
-
-Seguir [esta página](https://docs.docker.com/engine/install/fedora/) e os quatro passos listados [aqui](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
-
 
 ## Primeiro passo
-
-Deve correr os comandos listados no ficheiro `setup.sh`.
-
-## Segundo passo
 
 Deve correr `run.sh`.
 
@@ -103,11 +71,13 @@ Este comando vai iniciar dois containers:
 * Um com a aplicação que existe nesta pasta.
 * Uma instância de um container com Postgres
 
-## Terceiro passo
+## Aplicação Desktop
 
-Abrir http://localhost:8080 num browser e verificar que aparece a string "Olá Mundo".
+Correr o script `client.sh`
 
-Pode ainda confirmar que consegue ver um objecto JSON em http://localhost:8080/api/cidadao/1
+## Aplicação Web
+
+Aceder no browser : `http://localhost:8080`
 
 
 # FAQ
@@ -125,10 +95,6 @@ Tentar [desta forma](https://askubuntu.com/a/1411717).
 Tentar correr `docker ps`. Se não funcionar, [tentar isto](https://stackoverflow.com/a/68202428/28516).
 Confirmar também que está instalado o Docker Desktop (`brew install --cask docker`) e não apenas a command-line tool (`brew install docker`). A aplicação Docker deve também estar a correr (icon na menubar).
 
-
-## Estou em windows e o `bash setup.sh` não funciona
-
-Correr numa bash (tanto a Git Bash, MSys2 bash ou WSL em linux) e não na Powershell, nem no CMD.exe.
 
 ## `docker compose` não funciona
 
